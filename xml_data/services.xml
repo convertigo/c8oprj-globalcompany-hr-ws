@@ -1,0 +1,64 @@
+<services>
+	<service>
+		<id>1</id>
+		<name>Accounting</name>
+	</service>
+	<service>
+		<id>2</id>
+		<name>Advertising</name>
+	</service>
+	<service>
+		<id>3</id>
+		<name>Asset Management</name>
+	</service>
+	<service>
+		<id>4</id>
+		<name>Customer Relations</name>
+	</service>
+	<service>
+		<id>5</id>
+		<name>Customer Service</name>
+	</service>
+	<service>
+		<id>6</id>
+		<name>Finances</name>
+	</service>
+	<service>
+		<id>7</id>
+		<name>Human Resources</name>
+	</service>
+	<service>
+		<id>8</id>
+		<name>Legal Department</name>
+	</service>
+	<service>
+		<id>9</id>
+		<name>Media Relations</name>
+	</service>
+	<service>
+		<id>10</id>
+		<name>Payroll</name>
+	</service>
+	<service>
+		<id>11</id>
+		<name>Public Relations</name>
+	</service>
+	<service>
+		<id>12</id>
+		<name>Quality Assurance</name>
+	</service>
+	<service>
+		<id>13</id>
+		<name>Sales and Marketing</name>
+	</service>
+	<service>
+		<id>14</id>
+		<name>Research and Development</name>
+	</service>
+	<service>
+		<id>15</id>
+		<name>Tech Support</name>
+	</service>
+</services>
+
+

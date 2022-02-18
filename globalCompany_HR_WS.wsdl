@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="globalCompany_HR_WS" targetNamespace="http://www.convertigo.com/convertigo/projects/globalCompany_HR_WS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:globalCompany_HR_WS_ns="http://www.convertigo.com/convertigo/projects/globalCompany_HR_WS" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+	<wsdl:types>
+		<xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.convertigo.com/convertigo/projects/globalCompany_HR_WS" xmlns:n0="http://www.convertigo.com/convertigo/projects/globalCompany_HR_WS" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:complexType name="ConvertigoErrorContextVariable">
+				<xsd:attribute name="name" type="xsd:string"/>
+				<xsd:attribute name="value" type="xsd:string"/>
+			</xsd:complexType>
+			<xsd:complexType name="ConvertigoErrorContext">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="variable" type="n0:ConvertigoErrorContextVariable"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ConvertigoError">
+				<xsd:sequence minOccurs="0">
+					<xsd:element name="code" type="xsd:integer"/>
+					<xsd:element name="message" type="xsd:string"/>
+					<xsd:element name="details" type="xsd:string"/>
+					<xsd:element name="context" type="n0:ConvertigoErrorContext"/>
+					<xsd:element name="exception" type="xsd:string"/>
+					<xsd:element name="stacktrace" type="xsd:string"/>
+				</xsd:sequence>
+				<xsd:attribute name="project" type="xsd:string"/>
+				<xsd:attribute name="connector" type="xsd:string"/>
+				<xsd:attribute name="transaction" type="xsd:string"/>
+				<xsd:attribute name="sequence" type="xsd:string"/>
+				<xsd:attribute name="type">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="c8o"/>
+							<xsd:enumeration value="project"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:complexType>
+			<xsd:complexType name="departmentsListResponseData">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="service">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element maxOccurs="unbounded" minOccurs="0" name="id" type="xsd:byte"/>
+								<xsd:element maxOccurs="unbounded" minOccurs="0" name="name" type="xsd:string"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="error" type="n0:ConvertigoError"/>
+				</xsd:sequence>
+				<xsd:attribute name="connector" type="xsd:string"/>
+				<xsd:attribute name="context" type="xsd:string"/>
+				<xsd:attribute name="contextId" type="xsd:string"/>
+				<xsd:attribute name="fromStub" type="xsd:string"/>
+				<xsd:attribute name="fromcache" type="xsd:string"/>
+				<xsd:attribute name="generated" type="xsd:string"/>
+				<xsd:attribute name="project" type="xsd:string"/>
+				<xsd:attribute name="screenclass" type="xsd:string"/>
+				<xsd:attribute name="sequence" type="xsd:string"/>
+				<xsd:attribute name="signature" type="xsd:string"/>
+				<xsd:attribute name="transaction" type="xsd:string"/>
+				<xsd:attribute name="userReference" type="xsd:string"/>
+				<xsd:attribute name="version" type="xsd:string"/>
+			</xsd:complexType>
+			<xsd:complexType name="departmentsListRequestData"/>
+			<xsd:element name="departmentsList" type="n0:departmentsListRequestData"/>
+			<xsd:element name="departmentsListResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" type="n0:departmentsListResponseData"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="employeesListResponseData">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="employee">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element maxOccurs="unbounded" minOccurs="0" name="id" type="xsd:byte"/>
+								<xsd:element maxOccurs="unbounded" minOccurs="0" name="name" type="xsd:string"/>
+								<xsd:element maxOccurs="unbounded" minOccurs="0" name="firstname" type="xsd:string"/>
+								<xsd:element maxOccurs="unbounded" minOccurs="0" name="email" type="xsd:string"/>
+								<xsd:element maxOccurs="unbounded" minOccurs="0" name="department" type="xsd:string"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="error" type="n0:ConvertigoError"/>
+				</xsd:sequence>
+				<xsd:attribute name="connector" type="xsd:string"/>
+				<xsd:attribute name="context" type="xsd:string"/>
+				<xsd:attribute name="contextId" type="xsd:string"/>
+				<xsd:attribute name="fromStub" type="xsd:string"/>
+				<xsd:attribute name="fromcache" type="xsd:string"/>
+				<xsd:attribute name="generated" type="xsd:string"/>
+				<xsd:attribute name="project" type="xsd:string"/>
+				<xsd:attribute name="screenclass" type="xsd:string"/>
+				<xsd:attribute name="sequence" type="xsd:string"/>
+				<xsd:attribute name="signature" type="xsd:string"/>
+				<xsd:attribute name="transaction" type="xsd:string"/>
+				<xsd:attribute name="userReference" type="xsd:string"/>
+				<xsd:attribute name="version" type="xsd:string"/>
+			</xsd:complexType>
+			<xsd:complexType name="employeesListRequestData"/>
+			<xsd:element name="employeesList" type="n0:employeesListRequestData"/>
+			<xsd:element name="employeesListResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" type="n0:employeesListResponseData"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="getDepartmentResponseData">
+				<xsd:sequence>
+					<xsd:sequence minOccurs="0">
+						<xsd:element name="ws_error" type="xsd:string"/>
+					</xsd:sequence>
+					<xsd:sequence maxOccurs="unbounded" minOccurs="0">
+						<xsd:sequence minOccurs="0">
+							<xsd:element maxOccurs="unbounded" minOccurs="0" name="service">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element maxOccurs="unbounded" minOccurs="0" name="id" type="xsd:byte"/>
+										<xsd:element maxOccurs="unbounded" minOccurs="0" name="name" type="xsd:string"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:element name="ws_error" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="error" type="n0:ConvertigoError"/>
+				</xsd:sequence>
+				<xsd:attribute name="connector" type="xsd:string"/>
+				<xsd:attribute name="context" type="xsd:string"/>
+				<xsd:attribute name="contextId" type="xsd:string"/>
+				<xsd:attribute name="fromStub" type="xsd:string"/>
+				<xsd:attribute name="fromcache" type="xsd:string"/>
+				<xsd:attribute name="generated" type="xsd:string"/>
+				<xsd:attribute name="project" type="xsd:string"/>
+				<xsd:attribute name="screenclass" type="xsd:string"/>
+				<xsd:attribute name="sequence" type="xsd:string"/>
+				<xsd:attribute name="signature" type="xsd:string"/>
+				<xsd:attribute name="transaction" type="xsd:string"/>
+				<xsd:attribute name="userReference" type="xsd:string"/>
+				<xsd:attribute name="version" type="xsd:string"/>
+			</xsd:complexType>
+			<xsd:complexType name="getDepartmentRequestData">
+				<xsd:sequence>
+					<xsd:element name="depId" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>new variable</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="getDepartment" type="n0:getDepartmentRequestData"/>
+			<xsd:element name="getDepartmentResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" type="n0:getDepartmentResponseData"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:complexType name="getEmployeeResponseData">
+				<xsd:sequence>
+					<xsd:sequence minOccurs="0">
+						<xsd:element name="ws_error" type="xsd:string"/>
+					</xsd:sequence>
+					<xsd:sequence maxOccurs="unbounded" minOccurs="0">
+						<xsd:sequence minOccurs="0">
+							<xsd:element maxOccurs="unbounded" minOccurs="0" name="employee">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element maxOccurs="unbounded" minOccurs="0" name="id" type="xsd:byte"/>
+										<xsd:element maxOccurs="unbounded" minOccurs="0" name="name" type="xsd:string"/>
+										<xsd:element maxOccurs="unbounded" minOccurs="0" name="firstname" type="xsd:string"/>
+										<xsd:element maxOccurs="unbounded" minOccurs="0" name="email" type="xsd:string"/>
+										<xsd:element maxOccurs="unbounded" minOccurs="0" name="department" type="xsd:string"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:element name="ws_error" type="xsd:string"/>
+					<xsd:element minOccurs="0" name="error" type="n0:ConvertigoError"/>
+				</xsd:sequence>
+				<xsd:attribute name="connector" type="xsd:string"/>
+				<xsd:attribute name="context" type="xsd:string"/>
+				<xsd:attribute name="contextId" type="xsd:string"/>
+				<xsd:attribute name="fromStub" type="xsd:string"/>
+				<xsd:attribute name="fromcache" type="xsd:string"/>
+				<xsd:attribute name="generated" type="xsd:string"/>
+				<xsd:attribute name="project" type="xsd:string"/>
+				<xsd:attribute name="screenclass" type="xsd:string"/>
+				<xsd:attribute name="sequence" type="xsd:string"/>
+				<xsd:attribute name="signature" type="xsd:string"/>
+				<xsd:attribute name="transaction" type="xsd:string"/>
+				<xsd:attribute name="userReference" type="xsd:string"/>
+				<xsd:attribute name="version" type="xsd:string"/>
+			</xsd:complexType>
+			<xsd:complexType name="getEmployeeRequestData">
+				<xsd:sequence>
+					<xsd:element name="employeeId" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>new variable</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="getEmployee" type="n0:getEmployeeRequestData"/>
+			<xsd:element name="getEmployeeResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="response" type="n0:getEmployeeResponseData"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="departmentsListRequest">
+		<wsdl:part name="parameters" element="globalCompany_HR_WS_ns:departmentsList">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="departmentsListResponse">
+		<wsdl:part name="parameters" element="globalCompany_HR_WS_ns:departmentsListResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="employeesListRequest">
+		<wsdl:part name="parameters" element="globalCompany_HR_WS_ns:employeesList">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getDepartmentRequest">
+		<wsdl:part name="parameters" element="globalCompany_HR_WS_ns:getDepartment">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="employeesListResponse">
+		<wsdl:part name="parameters" element="globalCompany_HR_WS_ns:employeesListResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getDepartmentResponse">
+		<wsdl:part name="parameters" element="globalCompany_HR_WS_ns:getDepartmentResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getEmployeeRequest">
+		<wsdl:part name="parameters" element="globalCompany_HR_WS_ns:getEmployee">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getEmployeeResponse">
+		<wsdl:part name="parameters" element="globalCompany_HR_WS_ns:getEmployeeResponse">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="globalCompany_HR_WSPortType">
+		<wsdl:operation name="departmentsList">
+			<wsdl:input message="globalCompany_HR_WS_ns:departmentsListRequest">
+			</wsdl:input>
+			<wsdl:output message="globalCompany_HR_WS_ns:departmentsListResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="employeesList">
+			<wsdl:input message="globalCompany_HR_WS_ns:employeesListRequest">
+			</wsdl:input>
+			<wsdl:output message="globalCompany_HR_WS_ns:employeesListResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getDepartment">
+			<wsdl:input message="globalCompany_HR_WS_ns:getDepartmentRequest">
+			</wsdl:input>
+			<wsdl:output message="globalCompany_HR_WS_ns:getDepartmentResponse">
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getEmployee">
+			<wsdl:input message="globalCompany_HR_WS_ns:getEmployeeRequest">
+			</wsdl:input>
+			<wsdl:output message="globalCompany_HR_WS_ns:getEmployeeResponse">
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="globalCompany_HR_WSSOAPBinding" type="globalCompany_HR_WS_ns:globalCompany_HR_WSPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="departmentsList">
+			<soap:operation soapAction="globalCompany_HR_WS?departmentsList"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="employeesList">
+			<soap:operation soapAction="globalCompany_HR_WS?employeesList"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getDepartment">
+			<soap:operation soapAction="globalCompany_HR_WS?getDepartment"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getEmployee">
+			<soap:operation soapAction="globalCompany_HR_WS?getEmployee"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="globalCompany_HR_WS">
+		<wsdl:port name="globalCompany_HR_WSSOAP" binding="globalCompany_HR_WS_ns:globalCompany_HR_WSSOAPBinding">
+			<soap:address location="http://demo.convertigo.net/cems/projects/globalCompany_HR_WS/.wsl"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,17 @@
+↑default: true
+jdbcDriverClassName: org.hsqldb.jdbcDriver
+jdbcMaxConnection: 1
+jdbcURL: jdbc:hsqldb:file:./databases/databaseTemplate
+jdbcUserName: sa
+↓defaultTransactionToBeConfigured [transactions.SqlTransaction]: 
+  ↑default: true
+  accessibility: Hidden
+  generateJsonTypes: false
+  sqlQuery: |
+    SELECT * 
+    FROM {{tableName}};
+  xmlGrouping: true
+  xmlOutput: 0
+  ↓tableName [variables.RequestableVariable-1258642022665]: 
+    description: tableName
+    value: cities

@@ -1,0 +1,11 @@
+↓Read_XML_employes [steps.ReadXMLStep-1322818860777]: 
+  dataFile: '".//xml_data/employees.xml"'
+↓Copy_result [steps.XMLCopyStep-1322820801367]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1322818860777
+        - java.lang.String: 
+          - ↑value: ./employees/employee

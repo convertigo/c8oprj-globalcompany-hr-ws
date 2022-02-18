@@ -1,0 +1,11 @@
+↓Read_XML_employes [steps.ReadXMLStep-1322820929729]: 
+  dataFile: '".//xml_data/services.xml"'
+↓Copy_result [steps.XMLCopyStep-1322820929732]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1322820929729
+        - java.lang.String: 
+          - ↑value: ./services/service
