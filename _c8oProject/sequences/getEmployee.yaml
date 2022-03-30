@@ -1,45 +1,47 @@
-↓IfEmployeeIdEmpty [steps.IfStep-1322823395347]: 
+↓InitError [steps.SimpleStep-1648626743263]: 
+  expression: var ws_error = "Matching employeeId was not found.";
+↓jIfThenElse [steps.IfThenElseStep-1648626421364]: 
   condition: employeeId == null
-  ↓erreur [steps.XMLElementStep-1322823395350]: 
-    nodeName: ws_error
-    nodeText: Variable employeeId must be filled.
-  ↓Return [steps.ReturnStep-1322823395353]: 
-↓Read_XML_employes [steps.ReadXMLStep-1322823378311]: 
-  dataFile: '".//xml_data/employees.xml"'
-↓IteratorOnEachEmployee [steps.IteratorStep-1322823395356]: 
-  sourceDefinition: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-      - com.twinsoft.convertigo.beans.common.XMLVector: 
-        - java.lang.String: 
-          - ↑value: 1322823378311
-        - java.lang.String: 
-          - ↑value: ./employees/employee
-  ↓currentId [steps.SourceStep-1322823395359]: 
-    sourceDefinition: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-        - com.twinsoft.convertigo.beans.common.XMLVector: 
-          - java.lang.String: 
-            - ↑value: 1322823395356
-          - java.lang.String: 
-            - ↑value: ./id
-    variableName: currentId
-  ↓IfIdFound [steps.IfStep-1322823395362]: 
-    condition: parseInt(currentId.item(0).getTextContent()) == parseInt(employeeId)
-    ↓CopySalary [steps.XMLCopyStep-1322823395365]: 
+  ↓jThen [steps.ThenStep-1648626421366]: 
+    ↓SetError [steps.SimpleStep-1648626784619]: 
+      expression: ws_error = "Variable employeeId must be filled.";
+  ↓jElse [steps.ElseStep-1648626421368]: 
+    ↓Read_XML_employes [steps.ReadXMLStep-1322823378311]: 
+      dataFile: '".//xml_data/employees.xml"'
+    ↓IteratorOnEachEmployee [steps.IteratorStep-1322823395356]: 
       sourceDefinition: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
           - com.twinsoft.convertigo.beans.common.XMLVector: 
             - java.lang.String: 
-              - ↑value: 1322823395356
+              - ↑value: 1322823378311
             - java.lang.String: 
-              - ↑value: .
-    ↓Return [steps.ReturnStep-1322823395368]: 
-↓erreur [steps.XMLElementStep-1323163933234]: 
+              - ↑value: ./employees/employee
+      ↓currentId [steps.SourceStep-1322823395359]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1322823395356
+              - java.lang.String: 
+                - ↑value: ./id
+        variableName: currentId
+      ↓IfIdFound [steps.IfStep-1322823395362]: 
+        condition: parseInt(currentId.item(0).getTextContent()) == parseInt(employeeId)
+        ↓CopySalary [steps.XMLCopyStep-1322823395365]: 
+          sourceDefinition: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1322823395356
+                - java.lang.String: 
+                  - ↑value: .
+        ↓Return [steps.ReturnStep-1322823395368]: 
+↓jElement [steps.ElementStep-1648626805908]: 
+  expression: ws_error
   nodeName: ws_error
-  nodeText: Matching employeeId was not found.
 ↓employeeId [variables.RequestableVariable-1322823346508]: 
 ↓Test_Case [core.TestCase]: 
   ↓employeeId [variables.TestCaseVariable-1322823472608]: 
