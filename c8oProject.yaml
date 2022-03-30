@@ -4,10 +4,10 @@
   comment: 'Sequencer project to be deployed on demo.convertigo.net server to simulate an existing Web service of the Global company: HumanResources.'
   corsOrigin: 
   jsonOutput: verbose
-  jsonRoot: docNode
   version: 7.9.0.1
   ↓databaseConnector [connectors.SqlConnector]: 🗏 connectors/databaseConnector.yaml
   ↓departmentsList [sequences.GenericSequence]: 🗏 sequences/departmentsList.yaml
   ↓employeesList [sequences.GenericSequence]: 🗏 sequences/employeesList.yaml
   ↓getDepartment [sequences.GenericSequence]: 🗏 sequences/getDepartment.yaml
   ↓getEmployee [sequences.GenericSequence]: 🗏 sequences/getEmployee.yaml
+  ↓v1 [core.UrlMapper]: 🗏 urlMapper.yaml

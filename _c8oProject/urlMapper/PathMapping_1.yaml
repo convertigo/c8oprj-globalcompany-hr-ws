@@ -1,0 +1,4 @@
+path: /v1/employee/{employeeId}
+↓GetOperation [rest.GetOperation]: 
+  targetRequestable: globalCompany_HR_WS.getEmployee
+  ↓employeeId [rest.PathParameter-1648628302198]: 
